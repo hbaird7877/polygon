@@ -33,3 +33,8 @@ Creating the shared library (triangle.so)
 
 Copy the interface file (polygon.hpp) and library file (triangle.so) for downstream use. We need to use dlopen API to be 
 able to use the library.
+
+## Credits
+
+Explanation and source code was followed from
+https://tldp.org/HOWTO/html_single/C++-dlopen/
