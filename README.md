@@ -1,7 +1,7 @@
 # Introduction
 
-This is an example library that will be used to create triangle.so library file. The goal was to create a polygon interface (base class) which gets inheritted by subclass - (Triangle). The goal was to calculate the area of different polygons.
-After creating the triangle.so file, it will be used in conjunction with the actual repo. that would use the library file using dlopen API
+This is an example library that will be used to create triangle.so and square.so library files. The goal was to create a polygon interface (base class) which gets inherited by subclasses - (Triangle) and (Square). The goal was to calculate the area of different polygons.
+After creating the triangle.so and the square.so files, they will be used in conjunction with the actual repo. that would use the library files using dlopen API
 
 ## Components
 
@@ -13,25 +13,27 @@ programs later.
 
 ### Implementation
 
-The implementation details for the subclass (Triangle) is provided with triangle.cpp file. Note, the area method was declared
+The implementation details for the subclasses (Triangle) and (Square) are provided with triangle.cpp and square.cpp files. Note, the area method was declared
 virtual in the abstract polygon class and is implemented here. We have also declared class factory functions to generate objects. 
 This will used by calling programs later.
 
 ### Building
 
-Creating the object file (triangle.o) against the implementation file
+Creating the object file (triangle.o) and (Square.o) against the implementation file
 
     g++ -std=c++17 -c -o triangle.o triangle.cpp -fPIC
 
+    g++ -std=c++17 -c -o square.o square.cpp -fPIC
 
-Creating the shared library (triangle.so)
+Creating the shared libraries (triangle.so) and (square.so)
 
     gcc -shared -o triangle.so triangle.o
 
+    gcc -shared -o square.so square.o
 
 ## Next steps
 
-Copy the interface file (polygon.hpp) and library file (triangle.so) for downstream use. We need to use dlopen API to be 
+Copy the interface file (polygon.hpp) and library files (triangle.so) (square.so) for downstream use. We need to use dlopen API to be 
 able to use the library.
 
 ## Credits

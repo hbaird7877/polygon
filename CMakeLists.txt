@@ -3,4 +3,5 @@ project(polygon)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_library(polygon SHARED triangle.cpp)
+add_library(polygon SHARED triangle.cpp square.cpp)
+

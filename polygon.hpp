@@ -4,8 +4,8 @@
 class polygon{
 protected:
     double side_length;
-public:
     // Constructor
+public:
     polygon():side_length(0){};
 
     // Destructor
